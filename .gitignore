@@ -1,0 +1,45 @@
+# Store api keys in a .env file locally
+.env
+.env.local
+config.py
+secrets.json
+credentials.json
+
+# DATASETS
+# Ignore all CSV and JSON files no accidental giant datasets uploads
+*.csv
+*.json
+*.xlsx
+*.db
+*.sqlite
+
+# EXCEPTIONS: Allow the specific 10MB sample dataset required by the rubric
+!sample_data.csv
+!representative_sample.json
+
+# Ignore full data folders but keep the folder structure
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# JUPYTER NOTEBOOKS
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# 4. PYTHON ENVIRONMENTS & CACHE
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# 5. OS GENERATED FILES
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
