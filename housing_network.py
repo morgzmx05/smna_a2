@@ -20,7 +20,11 @@ vid_list = [
     "RfzDHc5dF9Q",
     "yNH91o9hP8w",
     "glVqpSLyrZc",
-    "feffoaDAgO0"
+    "feffoaDAgO0",
+    "a8iNcHeBUCU",
+    "qHAXbR7SYP8",
+    "H-o_F6nKOro",
+    "4IihsPhVd7c"
 ]
 
 def extract_comments_and_network(youtube, video_ids, max_comments_per_video=500):
@@ -101,7 +105,7 @@ if __name__ == "__main__":
     print(f"Starting extraction from manually chosen {len(vid_list)} videos")
     
     # increase max_comments_per_video for denser network
-    df_nlp, df_network = extract_comments_and_network(youtube, vid_list, max_comments_per_video=500)
+    df_nlp, df_network = extract_comments_and_network(youtube, vid_list, max_comments_per_video=1000)
     
     # Save your datasets
     df_nlp.to_csv("housing_crisis_nlp_data.csv", index=False)
