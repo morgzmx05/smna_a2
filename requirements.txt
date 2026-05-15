@@ -5,3 +5,7 @@ vaderSentiment
 wordcloud
 emoji
 python-dotenv
+bertopic
+transformers
+torch
+scikit-learn
