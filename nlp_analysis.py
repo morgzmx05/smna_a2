@@ -28,7 +28,7 @@ print(topic_info.head(10))
 
 # RoBert a (Deep Emotion Classification)
 # This looks for 28 specific emotions
-print("Running Emotion Analysis...")
+print("Running Emotion Analysis")
 emotion_pipe = pipeline(
     "text-classification", 
     model="SamLowe/roberta-base-go_emotions", 
