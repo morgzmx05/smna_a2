@@ -9,3 +9,4 @@ bertopic
 transformers
 torch
 scikit-learn
+matplotlib
