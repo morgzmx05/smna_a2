@@ -1,0 +1,7 @@
+google-api-python-client
+pandas
+nltk
+vaderSentiment
+wordcloud
+emoji
+python-dotenv
