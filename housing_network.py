@@ -12,9 +12,11 @@ youtube = build('youtube', 'v3', developerKey=API_KEY)
 # Manually picked video IDs (add if more found)
 vid_list = [
     "vWlh41jJ2Ww", 
-    "IqKIlLS7ln4", 
+    "IqKIlLS7ln4",
+    "PQn41fzVry0", 
     "01BDbhKm274",
-    "JqSbECqD7bc"
+    "JqSbECqD7bc",
+    "4IihsPhVd7c"
 ]
 
 def extract_comments_and_network(youtube, video_ids, max_comments_per_video=500):
