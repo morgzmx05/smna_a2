@@ -13,8 +13,8 @@ Our core research questions are:
 Data was collected using a custom Python script interfacing with the **YouTube Data API v3**. 
 
 * **Source:** YouTube comment threads and replies.
-* **Selection:** A curated list of highly controversial videos discussing the Australian housing crisis, published between May 2025 and May 2026.
-* **Extraction Method:** The script (`housing_network.py`) extracts up to 500 comments/replies per video. 
+* **Selection:** A curated list of highly controversial videos discussing the Australian housing crisis, published between June 2023 and May 2026, with the average publish date being April 2025.
+* **Extraction Method:** The script (`housing_network.py`) extracts up to 1000 comments/replies per video. 
 * **Limitations:** The YouTube API inherently caps nested replies returned in the standard `commentThreads` endpoint to 5 per top-level comment. Additionally, some major news networks disable comments on highly controversial videos, requiring manual selection of the video IDs. 
 
 ### Network Construction
