@@ -132,3 +132,15 @@ if __name__ == "__main__":
     print("\nExtraction done")
     print(f"Total NLP Rows: {len(df_nlp)}")
     print(f"Total Network Edges: {len(df_network)}")
+    
+    # Video published range
+    if len(df_nlp) > 0:
+        # Convert date to datetime format (mean calc)
+        df_nlp['Date'] = pd.to_datetime(df_nlp['Date'])
+        earliest_date = df_nlp['Date'].min()
+        latest_date = df_nlp['Date'].max()
+        average_date = df_nlp['Date'].mean()
+        print(f"\nDate Range:")
+        print(f"Earliest published: {earliest_date}")
+        print(f"Latest published: {latest_date}")
+        print(f"Mean date published: {average_date}")
