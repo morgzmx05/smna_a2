@@ -26,7 +26,23 @@ vid_list = [
     "H-o_F6nKOro",
     "4IihsPhVd7c",
     "g29yvU-6ep4",
-    "PNRl8TsMa9w"
+    "PNRl8TsMa9w",
+    "c37eEtRLPjU",
+    "HRP1t-P0Ljw",
+    "w2XCq5VyITI",
+    "h3Ny2J6eNsM",
+    "hk9CbqKEl-w",
+    "u71XD1Bt6Wo",
+    "LuEaGNXlh1E",
+    "2B4wf5E44bw",
+    "kOJ8PoOTFhI",
+    "uUSLmYPHkCc",
+    "GAu1Y-5EPeM",
+    "jV6BprD7toY",
+    "vSfec19YOPg",
+    "x6e1PGPdepM",
+    "JMin2Czkx1M",
+    "RJDVeLa7uXg"
 ]
 
 def extract_comments_and_network(youtube, video_ids, max_comments_per_video=500):
