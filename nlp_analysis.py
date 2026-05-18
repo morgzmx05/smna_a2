@@ -6,9 +6,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 #load csv file
 df = pd.read_csv("housing_crisis_nlp_data.csv")
 
+
 # BERTopic (Advanced Topic Modeling) 
 # We use a custom vectorizer to remove common noise words like 'video' or 'just' 
 vectorizer_model = CountVectorizer(stop_words="english")
+
+df['Text'] = df['Text'].fillna('').astype(str).str.strip()
+df = df[df['Text'] != ''].reset_index(drop=True)
 
 print("Running BERTopic")
 topic_model = BERTopic(
@@ -19,6 +23,7 @@ topic_model = BERTopic(
 )
 
 #run the modelonly on the 'Text' column
+
 topics, _ = topic_model.fit_transform(df['Text'].astype(str))
 df['Topic_Cluster'] = topics
 
