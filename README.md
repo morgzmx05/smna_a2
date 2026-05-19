@@ -2,12 +2,12 @@
 **RMIT University - Social Media and Network Analysis (COSC 2671) Assignment 2**
 
 ## Project Overview
-This project investigates the social dynamics and echo chambers present in YouTube comment sections regarding the Australian housing crisis. Specifically, we analyse discussions surrounding polarising topics such as negative gearing, immigration, and rent. 
+This project investigates narrative polarization and echo chambers in YouTube comment discussions regarding the Australian housing crisis. We employ a **bipartite network projection** to analyse how video audiences overlap and form distinct thematic communities, then correlate these with sentiment and emotional patterns.
 
-Our core research questions are:
-1. **Community Detection:** Are there distinct user communities (echo chambers) forming around specific ideologies?
-2. **Influence Propagation:** Do central, highly-replied-to users drive specific narrative topics within the network?
-3. **Sentiment Polarisation:** Do different topological communities exhibit contrasting sentiments?
+### Core Research Questions:
+1. **Narrative Communities:** Do videos naturally cluster into distinct ideological/thematic groups based on shared audiences?
+2. **Audience Polarisation:** Are there isolated narrative clusters with minimal audience overlap (echo chambers)?
+3. **Sentiment Alignment:** Do different video communities exhibit contrasting emotions in their comment discussions?
 
 ## Data Source & Collection
 Data was collected using a custom Python script interfacing with the **YouTube Data API v3**. 
@@ -17,18 +17,25 @@ Data was collected using a custom Python script interfacing with the **YouTube D
 * **Extraction Method:** The script (`housing_network.py`) extracts up to 1000 comments/replies per video. 
 * **Limitations:** The YouTube API inherently caps nested replies returned in the standard `commentThreads` endpoint to 5 per top-level comment. Additionally, some major news networks disable comments on highly controversial videos, requiring manual selection of the video IDs. 
 
-### Network Construction
-* **Nodes:** YouTube Users (`authorDisplayName`).
-* **Edges:** Directed and Weighted. An edge represents `Source_User` (the person replying) interacting with `Target_User` (the original commenter).
-* **Weight:** The frequency of replies from the `Source_User` to the `Target_User`. Self-replies are filtered out to maintain interaction integrity.
+### Network Construction (Module 1: Bipartite Projection)
+* **Bipartite Network:** (13,464 users × 31 videos, 21,072 comments)
+* **Video Projection:** A weighted edge exists between videos if 3+ users commented on both
+* **Result:** 30 connected videos with 318 edges (shared audiences)
+* **Community Detection:** Louvain algorithm detects 3 distinct video communities
+  - **Community 0:** 8 videos, 4,391 users, 6,040 comments (89% internal density)
+  - **Community 1:** 13 videos, 4,238 users, 7,210 comments (81% internal density) 
+  - **Community 2:** 9 videos, 5,680 users, 7,815 comments (94% internal density) strongest echo chamber
+* **Key Metrics:**
+  - Network density: 73.1% (highly interconnected topics)
+  - Modularity: 0.156 (moderate polarisation)
+  - Bridge videos: Identified via betweenness centrality (e.g., RfzDHc5dF9Q connects multiple communities)
 
 ## Repository Structure
 * `housing_network.py`: The data extraction and network-building script.
+* `nlp_analysis.py`: NLP pipeline (BERTopic + RoBERTa emotions).
+* `network_analysis.py`: Video network analysis (bipartite projection).
 * `requirements.txt`: Python package dependencies.
-* `.gitignore`: Prevents heavy and sensitive files like API keys from being committed.
-* `/data/`:
-* `housing_crisis_nlp_data.csv`: Contains User, Text, Date, Likes, and Is_Reply flags for text/sentiment analysis.
-* `housing_crisis_network_data.csv`: Contains Source_User, Target_User, and Weight for graph modeling.
+* `.gitignore`: Prevents heavy and sensitive files from being committed.
 
 ## Setup & Installation
 This project requires Python 3.x. 
@@ -52,19 +59,24 @@ Do **NOT** hardcode your YouTube API key into the script. To run this project, y
 Once your environment is set up and your key is in place, you can run the data extraction pipeline:
 `python housing_network.py`
 
-### **5. Run the NLP Analysis **
-Once the raw data is extracted, we process the text using a Natural Language Processing (NLP) pipeline. This approach moves beyond the basic VADER/LDA tools used in Assignment 1 to provide context aware insights.
-
+**5. Run the NLP Analysis**
+Process raw comments using BERTopic (topic modeling) and RoBERTa (emotion classification):
 `python nlp_analysis.py`
 
-**The NLP Pipeline involves:**
-* **Contextual Topic Modeling (BERTopic):** Instead of simple keyword counting, we use **BERTopic**, which utilises Sentence Transformers to group comments into themes based on latent meaning. This allows the model to group discussions like "Negative Gearing" and "Tax Breaks" even if the exact keywords differ.
-* **Granular Emotion Classification (Hugging Face):** 
-We implemented a **RoBERTa-base-go_emotions** model sourced from the **Hugging Face** ecosystem. This transformer-based model classifies text into 28 distinct emotional states (e.g Anger, Fear, Disappointment, Approval), providing a high-resolution view of political polarisation.
+**6. Run the Network Analysis
+Analyse video communities via bipartite projection and Louvain community detection:
+`python network_analysis.py`
+
+This generates:
+- `video_network_metrics.csv` - Per-video metrics (degree, betweenness, community)
+- `video_community_analysis.csv` - Community cohesion, shared audiences, topic profiles
+- `video_network_statistics.csv` - Network-wide statistics (modularity, density)
 
 ## **Data Outputs**
 * `housing_crisis_nlp_data.csv`: Raw text data and metadata extracted via YouTube API.
 * `housing_crisis_network_data.csv`: Edge list format (Source, Target, Weight) for graph modeling.
 * `housing_crisis_nlp_analysed.csv`: The final processed dataset containing:
-* **Topic_Cluster:** The specific thematic ID generated by BERTopic.
-* **Predominant_Emotion:** The granular emotion detected by the RoBERTa model.
+    * **Topic_Cluster:** The specific thematic ID generated by BERTopic.
+    * **Predominant_Emotion:** The granular emotion detected by the RoBERTa model.
+* `video_network_metrics.csv`: Per-video network position and community assignment
+* `video_community_analysis.csv`: Community-level aggregations (cohesion, audience size, shared users)
