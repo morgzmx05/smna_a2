@@ -10,3 +10,6 @@ transformers
 torch
 scikit-learn
 matplotlib
+networkx
+scipy
+python-louvain
