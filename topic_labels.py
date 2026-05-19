@@ -1,7 +1,7 @@
 import pandas as pd
 
 #load CSV generated
-df = pd.read_csv("housing_crisis_nlp_ANALYZED.csv")
+df = pd.read_csv("housing_crisis_nlp_analysed.csv")
 
 # the top keywords/examples for each topic to help name them
 # We group by the Topic_Cluster and grab the first 5 comments from each
