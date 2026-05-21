@@ -63,7 +63,7 @@ Once your environment is set up and your key is in place, you can run the data e
 Process raw comments using BERTopic (topic modeling) and RoBERTa (emotion classification):
 `python nlp_analysis.py`
 
-**6. Run the Network Analysis
+**6. Run the Network Analysis**
 Analyse video communities via bipartite projection and Louvain community detection:
 `python network_analysis.py`
 
@@ -71,6 +71,17 @@ This generates:
 - `video_network_metrics.csv` - Per-video metrics (degree, betweenness, community)
 - `video_community_analysis.csv` - Community cohesion, shared audiences, topic profiles
 - `video_network_statistics.csv` - Network-wide statistics (modularity, density)
+
+**7. Visualisation**
+Run `graph_visualisation.py` for graphs related to the following:
+* video network
+* emotion distribution
+* topic distribution
+* centrality analysis
+* echo chamber coherence
+* community scale
+* top creators
+* summary statistics table
 
 ## **Data Outputs**
 * `housing_crisis_nlp_data.csv`: Raw text data and metadata extracted via YouTube API.
