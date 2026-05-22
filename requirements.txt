@@ -13,3 +13,6 @@ matplotlib
 networkx
 scipy
 python-louvain
+collections
+pyLDAvis
+wordcloud
