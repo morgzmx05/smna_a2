@@ -146,7 +146,18 @@ print("\nMost central videos (highest betweenness/bridges between topics):")
 top_videos = video_metrics_df.nlargest(10, 'Betweenness_Centrality')[['Video_ID', 'Betweenness_Centrality', 'Community_ID', 'Num_Commenters', 'Num_Comments']]
 print(top_videos.to_string())
 
+titles = pd.read_csv("housing_crisis_video_metadata.csv")[['Video_ID', 'Channel']]
+for video in G_video.nodes():
+    G_video.nodes[video]['label'] = titles.set_index('Video_ID')['Channel'].to_dict().get(video, video)
+    G_video.nodes[video]['community'] = communities.get(video, -1)
+    G_video.nodes[video]['degree_centrality'] = degree_centrality.get(video, 0)
+    G_video.nodes[video]['betweenness_centrality'] = betweenness_centrality.get(video, 0)
+    G_video.nodes[video]['weighted_degree'] = weighted_degree.get(video, 0)
+    G_video.nodes[video]['num_commenters'] = len(users_by_video[video])
 
+# Write graphml
+nx.readwrite.write_graphml(G_video, 'video_network.graphml', infer_numeric_types=True)
+print("Saved to: video_network.graphml")
 # Vid metrics saved
 video_metrics_df.to_csv("video_network_metrics.csv", index=False)
 print("Saved to: video_network_metrics.csv")
