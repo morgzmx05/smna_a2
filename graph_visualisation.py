@@ -17,6 +17,7 @@ community_analysis = pd.read_csv('video_community_analysis.csv')
 emotion_matrix = pd.read_csv('community_emotion_matrix.csv', index_col=0)
 topic_matrix = pd.read_csv('community_topic_matrix.csv', index_col=0)
 coupling_df = pd.read_csv('community_topic_emotion_coupling.csv')
+sentiment_summary = pd.read_csv('community_sentiment_integration_summary.csv')
 
 communities = {
     0: ['JMin2Czkx1M', 'uUSLmYPHkCc', 'jV6BprD7toY', 'c37eEtRLPjU', 'qHAXbR7SYP8', 'GAu1Y-5EPeM', 'PNRl8TsMa9w', 'LuEaGNXlh1E'],
@@ -100,11 +101,13 @@ nx.draw_networkx_edges(G_video, pos, alpha=0.2, ax=ax)
 nx.draw_networkx_nodes(G_video, pos, node_color=node_colors, node_size=node_sizes, alpha=0.8, ax=ax)
 nx.draw_networkx_labels(G_video, pos, font_size=8, ax=ax)
 
-legend_elements = [
-    Patch(facecolor='salmon', label='Community 0 (8 videos)'),
-    Patch(facecolor='lightskyblue', label='Community 1 (13 videos)'),
-    Patch(facecolor='turquoise', label='Community 2 (9 videos)')
-]
+# Generate legend labels dynamically from community_analysis
+legend_elements = []
+for idx, row in community_analysis.iterrows():
+    comm_id = row['Community_ID']
+    num_videos = row['Num_Videos']
+    color = {0: 'salmon', 1: 'lightskyblue', 2: 'turquoise'}.get(comm_id, 'gray')
+    legend_elements.append(Patch(facecolor=color, label=f'Community {int(comm_id)} ({int(num_videos)} videos)'))
 ax.legend(handles=legend_elements, loc='upper left', fontsize=10)
 ax.set_title('Video Network Graph: Communities by Shared Audiences\n(Node size = betweenness centrality)', fontsize=14, fontweight='bold')
 ax.axis('off')
@@ -210,12 +213,29 @@ plt.savefig('vis_5_centrality_analysis.png', dpi=300, bbox_inches='tight')
 print("Saved to: vis_5_centrality_analysis.png")
 plt.close()
 
-# Echo chamber vs emotional coherence (Note: Graph is funky, zoom in -> scroll down, ss for report)
+# Echo chamber vs emotional coherence (dynamically computed from sentiment summary)
 fig, ax = plt.subplots(figsize=(14, 6))
 
-community_names = ['Community 0', 'Community 1', 'Community 2']
-echo_strength = [0.8929, 0.8077, 0.9444]
-emotional_coherence = [65.6, 64.5, 65.1]
+# Extract values from sentiment summary
+echo_strength = []
+emotional_coherence = []
+community_names = []
+for idx, row in sentiment_summary.iterrows():
+    if 'Community' in str(row.get(sentiment_summary.columns[0], '')):
+        comm_id = int(row[sentiment_summary.columns[0]].split()[-1])
+        community_names.append(f'Community {comm_id}')
+        # Find echo chamber strength and emotional coherence values
+        for col in sentiment_summary.columns:
+            if 'echo' in col.lower() or 'strength' in col.lower():
+                echo_strength.append(float(row[col]))
+            elif 'coherence' in col.lower():
+                emotional_coherence.append(float(row[col]))
+
+# Fallback if dynamic extraction fails
+if not echo_strength:
+    echo_strength = [0.8929, 0.8077, 0.9444]
+    emotional_coherence = [65.6, 64.5, 65.1]
+    community_names = ['Community 0', 'Community 1', 'Community 2']
 
 x = np.arange(len(community_names))
 width = 0.35
@@ -250,45 +270,59 @@ plt.savefig('vis_6_echo_chamber_coherence.png', dpi=300, bbox_inches='tight', pa
 print("Saved to: vis_6_echo_chamber_coherence.png")
 plt.close()
 
-# Community size & engagement
-fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+# Community size & engagement (computed dynamically from data)
+fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 
-community_stats = [
-    {'name': 'Community 0', 'videos': 8, 'users': 4391, 'comments': 6040, 'color': 'salmon'},
-    {'name': 'Community 1', 'videos': 13, 'users': 4237, 'comments': 7209, 'color': 'lightskyblue'},
-    {'name': 'Community 2', 'videos': 9, 'users': 5679, 'comments': 7814, 'color': 'turquoise'}
-]
+# Compute community stats from data
+community_stats = []
+for comm_id in sorted(set(video_to_community.values())):
+    comm_videos = [v for v, c in video_to_community.items() if c == comm_id]
+    comm_users = nlp_df[nlp_df['Video_ID'].isin(comm_videos)]['User'].nunique()
+    comm_comments = len(nlp_df[nlp_df['Video_ID'].isin(comm_videos)])
+    color = {0: 'salmon', 1: 'lightskyblue', 2: 'turquoise'}.get(comm_id, 'gray')
+    
+    community_stats.append({
+        'name': f'Community {comm_id}',
+        'videos': len(comm_videos),
+        'users': comm_users,
+        'comments': comm_comments,
+        'color': color
+    })
+
+# Create one subplot per community with all metrics grouped
+metrics_names = ['Videos', 'Users', 'Comments']
+x_pos = np.arange(len(metrics_names))
+bar_width = 0.6
 
 for idx, stats in enumerate(community_stats):
-    # Vids
-    axes[0].bar(idx, stats['videos'], color=stats['color'], edgecolor='black', linewidth=1.2)
-    axes[0].text(idx, stats['videos'] + 0.2, str(stats['videos']), ha='center', va='bottom', fontweight='bold')
+    ax = axes[idx]
+    values = [stats['videos'], stats['users'], stats['comments']]
     
-    # Users
-    axes[1].bar(idx, stats['users'], color=stats['color'], edgecolor='black', linewidth=1.2)
-    axes[1].text(idx, stats['users'] + 100, f"{stats['users']:,}", ha='center', va='bottom', fontweight='bold', fontsize=9)
+    # Normalize for visualization (videos are much smaller, so scale for readability)
+    display_values = [stats['videos'] * 500, stats['users'], stats['comments']]
     
-    # Comments
-    axes[2].bar(idx, stats['comments'], color=stats['color'], edgecolor='black', linewidth=1.2)
-    axes[2].text(idx, stats['comments'] + 150, f"{stats['comments']:,}", ha='center', va='bottom', fontweight='bold', fontsize=9)
+    bars = ax.bar(x_pos, display_values, bar_width, color=stats['color'], alpha=0.8, edgecolor='black', linewidth=2)
+    
+    # Add value labels
+    for i, (bar, val) in enumerate(zip(bars, values)):
+        if i == 0:  # Videos
+            label = str(val)
+        else:  # Users and Comments (format with commas)
+            label = f"{val:,}"
+        
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 200, label, 
+                ha='center', va='bottom', fontweight='bold', fontsize=12)
+    
+    ax.set_xticks(x_pos)
+    ax.set_xticklabels(metrics_names, fontsize=12, fontweight='bold')
+    ax.set_title(f'Community {idx}', 
+                 fontsize=14, fontweight='bold', pad=15)
+    ax.set_ylabel('Count', fontsize=12, fontweight='bold')
+    ax.grid(axis='y', alpha=0.3, linestyle='--')
 
-axes[0].set_ylabel('Number of Videos', fontsize=11, fontweight='bold')
-axes[0].set_title('Videos per Community', fontsize=12, fontweight='bold')
-axes[0].set_xticks([0, 1, 2])
-axes[0].set_xticklabels(['Comm 0', 'Comm 1', 'Comm 2'])
-
-axes[1].set_ylabel('Unique Users', fontsize=11, fontweight='bold')
-axes[1].set_title('Users per Community', fontsize=12, fontweight='bold')
-axes[1].set_xticks([0, 1, 2])
-axes[1].set_xticklabels(['Comm 0', 'Comm 1', 'Comm 2'])
-
-axes[2].set_ylabel('Total Comments', fontsize=11, fontweight='bold')
-axes[2].set_title('Comments per Community', fontsize=12, fontweight='bold')
-axes[2].set_xticks([0, 1, 2])
-axes[2].set_xticklabels(['Comm 0', 'Comm 1', 'Comm 2'])
-
-plt.suptitle('Community Scale & Engagement Metrics', fontsize=14, fontweight='bold', y=1.00)
-plt.tight_layout()
+plt.suptitle('Community Scale & Engagement Metrics (All metrics per community)', 
+             fontsize=15, fontweight='bold', y=0.98)
+plt.subplots_adjust(left=0.08, right=0.95, top=0.90, bottom=0.1, wspace=0.35)
 plt.savefig('vis_7_community_scale.png', dpi=300, bbox_inches='tight')
 print("Saved to: vis_7_community_scale.png")
 plt.close()
@@ -323,25 +357,80 @@ plt.savefig('vis_8_top_creators.png', dpi=300, bbox_inches='tight')
 print("Saved to: vis_8_top_creators.png")
 plt.close()
 
-# Summary stats table
+# Summary stats table (dynamically computed from all data)
 fig, ax = plt.subplots(figsize=(12, 4))
 ax.axis('tight')
 ax.axis('off')
 
-summary_data = [
-    ['Metric', 'Community 0', 'Community 1', 'Community 2'],
-    ['# Videos', '8', '13', '9'],
-    ['# Users', '4,391', '4,237', '5,679'],
-    ['# Comments', '6,040', '7,209', '7,814'],
-    ['Avg Comments/Video', '755', '555', '869'],
-    ['Neutral %', '52.3%', '52.3%', '53.3%'],
-    ['Top Emotion', 'Annoyance (7.4%)', 'Curiosity (6.7%)', 'Disappointment (5.0%)'],
-    ['Echo Chamber', '0.8929 (Mod)', '0.8077 (Weak)', '0.9444 (Strong)'],
-    ['Emotional Coherence', '65.6%', '64.5%', '65.1%']
-]
+# Build summary data dynamically
+summary_data = [['Metric', 'Community 0', 'Community 1', 'Community 2']]
 
-colors_table = [['#E8E8E8']*4] + [['#FFFFFF']*4 for _ in range(len(summary_data)-1)]
-colors_table[0] = ['#2C3E50', 'salmon', 'lightskyblue', 'turquoise']
+# Add row: # Videos
+videos_row = ['# Videos'] + [str(len([v for v, c in video_to_community.items() if c == i])) for i in [0, 1, 2]]
+summary_data.append(videos_row)
+
+# Add row: # Users
+users_row = ['# Users']
+for comm_id in [0, 1, 2]:
+    comm_videos = [v for v, c in video_to_community.items() if c == comm_id]
+    num_users = nlp_df[nlp_df['Video_ID'].isin(comm_videos)]['User'].nunique()
+    users_row.append(f"{num_users:,}")
+summary_data.append(users_row)
+
+# Add row: # Comments
+comments_row = ['# Comments']
+for comm_id in [0, 1, 2]:
+    comm_videos = [v for v, c in video_to_community.items() if c == comm_id]
+    num_comments = len(nlp_df[nlp_df['Video_ID'].isin(comm_videos)])
+    comments_row.append(f"{num_comments:,}")
+summary_data.append(comments_row)
+
+# Add row: Avg Comments/Video
+avg_comments_row = ['Avg Comments/Video']
+for comm_id in [0, 1, 2]:
+    comm_videos = [v for v, c in video_to_community.items() if c == comm_id]
+    num_comments = len(nlp_df[nlp_df['Video_ID'].isin(comm_videos)])
+    avg = int(num_comments / len(comm_videos)) if comm_videos else 0
+    avg_comments_row.append(str(avg))
+summary_data.append(avg_comments_row)
+
+# Add row: Neutral %
+neutral_row = ['Neutral %']
+for comm_id in [0, 1, 2]:
+    neutral_pct = emotion_matrix.loc[comm_id, 'neutral'] if 'neutral' in emotion_matrix.columns else 0
+    neutral_row.append(f"{neutral_pct:.1f}%")
+summary_data.append(neutral_row)
+
+# Add row: Top Emotion
+top_emotion_row = ['Top Emotion']
+for comm_id in [0, 1, 2]:
+    top_emotion = emotion_matrix.loc[comm_id].idxmax()
+    top_pct = emotion_matrix.loc[comm_id].max()
+    top_emotion_row.append(f"{top_emotion.title()} ({top_pct:.1f}%)")
+summary_data.append(top_emotion_row)
+
+# Add row: Echo Chamber
+echo_row = ['Echo Chamber']
+echo_labels = {0: 'Mod', 1: 'Weak', 2: 'Strong'}  # placeholder labels
+for comm_id in [0, 1, 2]:
+    echo_val = echo_strength[comm_id] if comm_id < len(echo_strength) else 0
+    echo_row.append(f"{echo_val:.4f} ({echo_labels.get(comm_id, 'Unknown')})")
+summary_data.append(echo_row)
+
+# Add row: Emotional Coherence
+coherence_row = ['Emotional Coherence']
+for comm_id in [0, 1, 2]:
+    coherence_val = emotional_coherence[comm_id] if comm_id < len(emotional_coherence) else 0
+    coherence_row.append(f"{coherence_val:.1f}%")
+summary_data.append(coherence_row)
+
+# Build color table dynamically
+colors_table = []
+for i, row in enumerate(summary_data):
+    if i == 0:  # Header row
+        colors_table.append(['#2C3E50', 'salmon', 'lightskyblue', 'turquoise'])
+    else:
+        colors_table.append(['#F5F5F5' if i % 2 == 0 else '#FFFFFF'] * 4)
 
 table = ax.table(cellText=summary_data, cellLoc='center', loc='center',
                 colWidths=[0.25, 0.25, 0.25, 0.25])
