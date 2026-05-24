@@ -24,7 +24,6 @@ vid_list = [
     "a8iNcHeBUCU",
     "qHAXbR7SYP8",
     "H-o_F6nKOro",
-    "4IihsPhVd7c",
     "g29yvU-6ep4",
     "PNRl8TsMa9w",
     "c37eEtRLPjU",
@@ -118,12 +117,35 @@ def extract_comments_and_network(youtube, video_ids, max_comments_per_video=500)
     
     return pd.DataFrame(nlp_data), pd.DataFrame(network_data)
 
+def get_video_metadata(youtube, video_ids):
+    """Fetch video publication dates from YouTube API"""
+    video_meta = {}
+    for video_id in video_ids:
+        try:
+            response = youtube.videos().list(
+                part="snippet",
+                id=video_id
+            ).execute()
+            if response['items']:
+                pub_date = response['items'][0]['snippet']['publishedAt']
+                video_meta[video_id] = pd.to_datetime(pub_date)
+        except Exception as e:
+            print(f"Error fetching metadata for {video_id}: {e}")
+    return video_meta
+
 #extraction
 if __name__ == "__main__":
     print(f"Starting extraction from manually chosen {len(vid_list)} videos")
     
+    # Fetch video metadata first
+    print("Fetching video publication dates...")
+    video_metadata = get_video_metadata(youtube, vid_list)
+    
     # increase max_comments_per_video for denser network
     df_nlp, df_network = extract_comments_and_network(youtube, vid_list, max_comments_per_video=1000)
+    
+    # Map video publication dates to dataframe
+    df_nlp['Video_Published_Date'] = df_nlp['Video_ID'].map(video_metadata)
     
     # Save your datasets
     df_nlp.to_csv("housing_crisis_nlp_data.csv", index=False)
@@ -135,12 +157,19 @@ if __name__ == "__main__":
     
     # Video published range
     if len(df_nlp) > 0:
-        # Convert date to datetime format (mean calc)
+        # Convert dates to datetime format
         df_nlp['Date'] = pd.to_datetime(df_nlp['Date'])
-        earliest_date = df_nlp['Date'].min()
-        latest_date = df_nlp['Date'].max()
-        average_date = df_nlp['Date'].mean()
-        print(f"\nDate Range:")
-        print(f"Earliest published: {earliest_date}")
-        print(f"Latest published: {latest_date}")
-        print(f"Mean date published: {average_date}")
+        earliest_video = df_nlp['Video_Published_Date'].min()
+        latest_video = df_nlp['Video_Published_Date'].max()
+        avg_video_date = df_nlp[['Video_ID', 'Video_Published_Date']].drop_duplicates()['Video_Published_Date'].mean()
+        earliest_comment = df_nlp['Date'].min()
+        latest_comment = df_nlp['Date'].max()
+        avg_comment_date = df_nlp['Date'].mean()
+        print(f"\nVideo Publication Range:")
+        print(f"Earliest video published: {earliest_video}")
+        print(f"Latest video published: {latest_video}")
+        print(f"Avg date video published: {avg_video_date}")
+        print(f"\nComment Date Range:")
+        print(f"Earliest comment: {earliest_comment}")
+        print(f"Latest comment: {latest_comment}")
+        print(f"Avg comment date: {avg_comment_date}")

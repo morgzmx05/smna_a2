@@ -16,3 +16,4 @@ python-louvain
 collections
 pyLDAvis
 wordcloud
+contractions

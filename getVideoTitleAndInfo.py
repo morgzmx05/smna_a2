@@ -24,7 +24,6 @@ vid_list = [
     "a8iNcHeBUCU",
     "qHAXbR7SYP8",
     "H-o_F6nKOro",
-    "4IihsPhVd7c",
     "g29yvU-6ep4",
     "PNRl8TsMa9w",
     "c37eEtRLPjU",
