@@ -1,0 +1,1203 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d6" for="edge" attr.name="weight" attr.type="long"/>
+<key id="d5" for="node" attr.name="num_commenters" attr.type="long"/>
+<key id="d4" for="node" attr.name="weighted_degree" attr.type="long"/>
+<key id="d3" for="node" attr.name="betweenness_centrality" attr.type="double"/>
+<key id="d2" for="node" attr.name="degree_centrality" attr.type="double"/>
+<key id="d1" for="node" attr.name="community" attr.type="long"/>
+<key id="d0" for="node" attr.name="label" attr.type="string"/>
+<graph edgedefault="undirected"><node id="RJDVeLa7uXg">
+  <data key="d0">Australian Property Mastery with PK Gupta</data>
+  <data key="d1">0</data>
+  <data key="d2">0.3103448275862069</data>
+  <data key="d3">0.020402298850574714</data>
+  <data key="d4">37</data>
+  <data key="d5">74</data>
+</node>
+<node id="x6e1PGPdepM">
+  <data key="d0">Yellow Brick Road</data>
+  <data key="d1">0</data>
+  <data key="d2">0.6551724137931034</data>
+  <data key="d3">0.018678160919540228</data>
+  <data key="d4">100</data>
+  <data key="d5">173</data>
+</node>
+<node id="h3Ny2J6eNsM">
+  <data key="d0">Sky News Australia</data>
+  <data key="d1">0</data>
+  <data key="d2">0.6896551724137931</data>
+  <data key="d3">0.058497536945812806</data>
+  <data key="d4">105</data>
+  <data key="d5">316</data>
+</node>
+<node id="uUSLmYPHkCc">
+  <data key="d0">friendlyjordies</data>
+  <data key="d1">1</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.02097701149425287</data>
+  <data key="d4">228</data>
+  <data key="d5">853</data>
+</node>
+<node id="w2XCq5VyITI">
+  <data key="d0">Sky News Australia</data>
+  <data key="d1">2</data>
+  <data key="d2">0.5862068965517241</data>
+  <data key="d3">0.01929392446633826</data>
+  <data key="d4">102</data>
+  <data key="d5">223</data>
+</node>
+<node id="2B4wf5E44bw">
+  <data key="d0">zannonymous</data>
+  <data key="d1">2</data>
+  <data key="d2">0.41379310344827586</data>
+  <data key="d3">0.010467980295566502</data>
+  <data key="d4">88</data>
+  <data key="d5">217</data>
+</node>
+<node id="hk9CbqKEl-w">
+  <data key="d0">Andrei Jikh</data>
+  <data key="d1">2</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.0</data>
+  <data key="d4">268</data>
+  <data key="d5">851</data>
+</node>
+<node id="g29yvU-6ep4">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.6206896551724138</data>
+  <data key="d3">0.021756978653530375</data>
+  <data key="d4">150</data>
+  <data key="d5">218</data>
+</node>
+<node id="u71XD1Bt6Wo">
+  <data key="d0">Jamie Zhu</data>
+  <data key="d1">2</data>
+  <data key="d2">0.7241379310344828</data>
+  <data key="d3">0.008620689655172412</data>
+  <data key="d4">213</data>
+  <data key="d5">802</data>
+</node>
+<node id="GAu1Y-5EPeM">
+  <data key="d0">friendlyjordies</data>
+  <data key="d1">1</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.020402298850574718</data>
+  <data key="d4">196</data>
+  <data key="d5">697</data>
+</node>
+<node id="jV6BprD7toY">
+  <data key="d0">friendlyjordies</data>
+  <data key="d1">1</data>
+  <data key="d2">0.4482758620689655</data>
+  <data key="d3">0.018062397372742203</data>
+  <data key="d4">92</data>
+  <data key="d5">790</data>
+</node>
+<node id="c37eEtRLPjU">
+  <data key="d0">ABC Australia</data>
+  <data key="d1">1</data>
+  <data key="d2">0.5862068965517241</data>
+  <data key="d3">0.02257799671592775</data>
+  <data key="d4">103</data>
+  <data key="d5">316</data>
+</node>
+<node id="glVqpSLyrZc">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.896551724137931</data>
+  <data key="d3">0.027093596059113302</data>
+  <data key="d4">269</data>
+  <data key="d5">502</data>
+</node>
+<node id="RfzDHc5dF9Q">
+  <data key="d0">Australian Hub</data>
+  <data key="d1">0</data>
+  <data key="d2">0.7241379310344828</data>
+  <data key="d3">0.07027914614121511</data>
+  <data key="d4">115</data>
+  <data key="d5">222</data>
+</node>
+<node id="qHAXbR7SYP8">
+  <data key="d0">Sky News Australia</data>
+  <data key="d1">1</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.04289819376026273</data>
+  <data key="d4">124</data>
+  <data key="d5">237</data>
+</node>
+<node id="HRP1t-P0Ljw">
+  <data key="d0">60 Minutes Australia</data>
+  <data key="d1">0</data>
+  <data key="d2">0.5517241379310345</data>
+  <data key="d3">0.04495073891625615</data>
+  <data key="d4">73</data>
+  <data key="d5">724</data>
+</node>
+<node id="feffoaDAgO0">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.00451559934318555</data>
+  <data key="d4">226</data>
+  <data key="d5">424</data>
+</node>
+<node id="4IihsPhVd7c">
+  <data key="d0">ProfSteveKeen</data>
+  <data key="d1">0</data>
+  <data key="d2">1.0</data>
+  <data key="d3">0.004720853858784893</data>
+  <data key="d4">314</data>
+  <data key="d5">899</data>
+</node>
+<node id="vSfec19YOPg">
+  <data key="d0">Leith van Onselen </data>
+  <data key="d1">0</data>
+  <data key="d2">0.9310344827586207</data>
+  <data key="d3">0.01650246305418719</data>
+  <data key="d4">257</data>
+  <data key="d5">484</data>
+</node>
+<node id="H-o_F6nKOro">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.5862068965517241</data>
+  <data key="d3">0.006157635467980296</data>
+  <data key="d4">110</data>
+  <data key="d5">93</data>
+</node>
+<node id="PQn41fzVry0">
+  <data key="d0">Daily Mail Australia</data>
+  <data key="d1">2</data>
+  <data key="d2">0.9310344827586207</data>
+  <data key="d3">0.010262725779967157</data>
+  <data key="d4">271</data>
+  <data key="d5">886</data>
+</node>
+<node id="PNRl8TsMa9w">
+  <data key="d0">9 News Australia</data>
+  <data key="d1">1</data>
+  <data key="d2">0.5862068965517241</data>
+  <data key="d3">0.02134646962233169</data>
+  <data key="d4">85</data>
+  <data key="d5">143</data>
+</node>
+<node id="kOJ8PoOTFhI">
+  <data key="d0">zannonymous</data>
+  <data key="d1">2</data>
+  <data key="d2">0.7931034482758621</data>
+  <data key="d3">0.02073070607553366</data>
+  <data key="d4">239</data>
+  <data key="d5">718</data>
+</node>
+<node id="JqSbECqD7bc">
+  <data key="d0">SF Capital</data>
+  <data key="d1">2</data>
+  <data key="d2">0.9655172413793103</data>
+  <data key="d3">0.00574712643678161</data>
+  <data key="d4">407</data>
+  <data key="d5">832</data>
+</node>
+<node id="vWlh41jJ2Ww">
+  <data key="d0">Bloomberg Television</data>
+  <data key="d1">2</data>
+  <data key="d2">0.9655172413793103</data>
+  <data key="d3">0.0</data>
+  <data key="d4">371</data>
+  <data key="d5">805</data>
+</node>
+<node id="IqKIlLS7ln4">
+  <data key="d0">Bloomberg Originals</data>
+  <data key="d1">2</data>
+  <data key="d2">0.896551724137931</data>
+  <data key="d3">0.028940886699507385</data>
+  <data key="d4">273</data>
+  <data key="d5">800</data>
+</node>
+<node id="JMin2Czkx1M">
+  <data key="d0">Punter's Politics</data>
+  <data key="d1">1</data>
+  <data key="d2">0.8275862068965517</data>
+  <data key="d3">0.051108374384236446</data>
+  <data key="d4">177</data>
+  <data key="d5">755</data>
+</node>
+<node id="a8iNcHeBUCU">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.8620689655172413</data>
+  <data key="d3">0.01929392446633826</data>
+  <data key="d4">239</data>
+  <data key="d5">477</data>
+</node>
+<node id="LuEaGNXlh1E">
+  <data key="d0">Punter's Politics</data>
+  <data key="d1">1</data>
+  <data key="d2">0.9655172413793103</data>
+  <data key="d3">0.0</data>
+  <data key="d4">412</data>
+  <data key="d5">828</data>
+</node>
+<node id="yNH91o9hP8w">
+  <data key="d0">Scott Kuru</data>
+  <data key="d1">0</data>
+  <data key="d2">0.4482758620689655</data>
+  <data key="d3">0.03210180623973727</data>
+  <data key="d4">60</data>
+  <data key="d5">91</data>
+</node>
+<edge source="RJDVeLa7uXg" target="x6e1PGPdepM">
+  <data key="d6">6</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="glVqpSLyrZc">
+  <data key="d6">4</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="4IihsPhVd7c">
+  <data key="d6">5</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="vSfec19YOPg">
+  <data key="d6">3</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="H-o_F6nKOro">
+  <data key="d6">5</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="PQn41fzVry0">
+  <data key="d6">3</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="JqSbECqD7bc">
+  <data key="d6">4</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="RJDVeLa7uXg" target="a8iNcHeBUCU">
+  <data key="d6">4</data>
+</edge>
+<edge source="x6e1PGPdepM" target="h3Ny2J6eNsM">
+  <data key="d6">3</data>
+</edge>
+<edge source="x6e1PGPdepM" target="uUSLmYPHkCc">
+  <data key="d6">3</data>
+</edge>
+<edge source="x6e1PGPdepM" target="hk9CbqKEl-w">
+  <data key="d6">5</data>
+</edge>
+<edge source="x6e1PGPdepM" target="g29yvU-6ep4">
+  <data key="d6">4</data>
+</edge>
+<edge source="x6e1PGPdepM" target="glVqpSLyrZc">
+  <data key="d6">12</data>
+</edge>
+<edge source="x6e1PGPdepM" target="RfzDHc5dF9Q">
+  <data key="d6">3</data>
+</edge>
+<edge source="x6e1PGPdepM" target="qHAXbR7SYP8">
+  <data key="d6">3</data>
+</edge>
+<edge source="x6e1PGPdepM" target="HRP1t-P0Ljw">
+  <data key="d6">3</data>
+</edge>
+<edge source="x6e1PGPdepM" target="4IihsPhVd7c">
+  <data key="d6">4</data>
+</edge>
+<edge source="x6e1PGPdepM" target="vSfec19YOPg">
+  <data key="d6">7</data>
+</edge>
+<edge source="x6e1PGPdepM" target="H-o_F6nKOro">
+  <data key="d6">6</data>
+</edge>
+<edge source="x6e1PGPdepM" target="PQn41fzVry0">
+  <data key="d6">6</data>
+</edge>
+<edge source="x6e1PGPdepM" target="JqSbECqD7bc">
+  <data key="d6">6</data>
+</edge>
+<edge source="x6e1PGPdepM" target="vWlh41jJ2Ww">
+  <data key="d6">6</data>
+</edge>
+<edge source="x6e1PGPdepM" target="IqKIlLS7ln4">
+  <data key="d6">4</data>
+</edge>
+<edge source="x6e1PGPdepM" target="JMin2Czkx1M">
+  <data key="d6">5</data>
+</edge>
+<edge source="x6e1PGPdepM" target="a8iNcHeBUCU">
+  <data key="d6">5</data>
+</edge>
+<edge source="x6e1PGPdepM" target="LuEaGNXlh1E">
+  <data key="d6">9</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="w2XCq5VyITI">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="hk9CbqKEl-w">
+  <data key="d6">5</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="g29yvU-6ep4">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="u71XD1Bt6Wo">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="GAu1Y-5EPeM">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="glVqpSLyrZc">
+  <data key="d6">6</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="RfzDHc5dF9Q">
+  <data key="d6">8</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="qHAXbR7SYP8">
+  <data key="d6">10</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="feffoaDAgO0">
+  <data key="d6">9</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="4IihsPhVd7c">
+  <data key="d6">7</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="vSfec19YOPg">
+  <data key="d6">5</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="PQn41fzVry0">
+  <data key="d6">6</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="kOJ8PoOTFhI">
+  <data key="d6">7</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="JqSbECqD7bc">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="vWlh41jJ2Ww">
+  <data key="d6">8</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="IqKIlLS7ln4">
+  <data key="d6">5</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="a8iNcHeBUCU">
+  <data key="d6">3</data>
+</edge>
+<edge source="h3Ny2J6eNsM" target="LuEaGNXlh1E">
+  <data key="d6">5</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="w2XCq5VyITI">
+  <data key="d6">5</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="2B4wf5E44bw">
+  <data key="d6">4</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="hk9CbqKEl-w">
+  <data key="d6">11</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="g29yvU-6ep4">
+  <data key="d6">4</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="u71XD1Bt6Wo">
+  <data key="d6">5</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="GAu1Y-5EPeM">
+  <data key="d6">34</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="jV6BprD7toY">
+  <data key="d6">18</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="c37eEtRLPjU">
+  <data key="d6">11</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="glVqpSLyrZc">
+  <data key="d6">6</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="RfzDHc5dF9Q">
+  <data key="d6">3</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="qHAXbR7SYP8">
+  <data key="d6">3</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="4IihsPhVd7c">
+  <data key="d6">16</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="vSfec19YOPg">
+  <data key="d6">11</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="PQn41fzVry0">
+  <data key="d6">9</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="kOJ8PoOTFhI">
+  <data key="d6">14</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="JqSbECqD7bc">
+  <data key="d6">20</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="vWlh41jJ2Ww">
+  <data key="d6">12</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="IqKIlLS7ln4">
+  <data key="d6">4</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="JMin2Czkx1M">
+  <data key="d6">7</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="a8iNcHeBUCU">
+  <data key="d6">6</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="LuEaGNXlh1E">
+  <data key="d6">19</data>
+</edge>
+<edge source="uUSLmYPHkCc" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="w2XCq5VyITI" target="hk9CbqKEl-w">
+  <data key="d6">6</data>
+</edge>
+<edge source="w2XCq5VyITI" target="u71XD1Bt6Wo">
+  <data key="d6">12</data>
+</edge>
+<edge source="w2XCq5VyITI" target="glVqpSLyrZc">
+  <data key="d6">3</data>
+</edge>
+<edge source="w2XCq5VyITI" target="qHAXbR7SYP8">
+  <data key="d6">5</data>
+</edge>
+<edge source="w2XCq5VyITI" target="feffoaDAgO0">
+  <data key="d6">4</data>
+</edge>
+<edge source="w2XCq5VyITI" target="4IihsPhVd7c">
+  <data key="d6">4</data>
+</edge>
+<edge source="w2XCq5VyITI" target="vSfec19YOPg">
+  <data key="d6">6</data>
+</edge>
+<edge source="w2XCq5VyITI" target="PQn41fzVry0">
+  <data key="d6">5</data>
+</edge>
+<edge source="w2XCq5VyITI" target="kOJ8PoOTFhI">
+  <data key="d6">6</data>
+</edge>
+<edge source="w2XCq5VyITI" target="JqSbECqD7bc">
+  <data key="d6">14</data>
+</edge>
+<edge source="w2XCq5VyITI" target="vWlh41jJ2Ww">
+  <data key="d6">7</data>
+</edge>
+<edge source="w2XCq5VyITI" target="IqKIlLS7ln4">
+  <data key="d6">7</data>
+</edge>
+<edge source="w2XCq5VyITI" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="w2XCq5VyITI" target="a8iNcHeBUCU">
+  <data key="d6">7</data>
+</edge>
+<edge source="w2XCq5VyITI" target="LuEaGNXlh1E">
+  <data key="d6">5</data>
+</edge>
+<edge source="2B4wf5E44bw" target="hk9CbqKEl-w">
+  <data key="d6">7</data>
+</edge>
+<edge source="2B4wf5E44bw" target="u71XD1Bt6Wo">
+  <data key="d6">10</data>
+</edge>
+<edge source="2B4wf5E44bw" target="GAu1Y-5EPeM">
+  <data key="d6">7</data>
+</edge>
+<edge source="2B4wf5E44bw" target="c37eEtRLPjU">
+  <data key="d6">3</data>
+</edge>
+<edge source="2B4wf5E44bw" target="4IihsPhVd7c">
+  <data key="d6">4</data>
+</edge>
+<edge source="2B4wf5E44bw" target="vSfec19YOPg">
+  <data key="d6">3</data>
+</edge>
+<edge source="2B4wf5E44bw" target="kOJ8PoOTFhI">
+  <data key="d6">18</data>
+</edge>
+<edge source="2B4wf5E44bw" target="JqSbECqD7bc">
+  <data key="d6">11</data>
+</edge>
+<edge source="2B4wf5E44bw" target="vWlh41jJ2Ww">
+  <data key="d6">9</data>
+</edge>
+<edge source="2B4wf5E44bw" target="IqKIlLS7ln4">
+  <data key="d6">5</data>
+</edge>
+<edge source="2B4wf5E44bw" target="LuEaGNXlh1E">
+  <data key="d6">7</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="u71XD1Bt6Wo">
+  <data key="d6">16</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="GAu1Y-5EPeM">
+  <data key="d6">8</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="jV6BprD7toY">
+  <data key="d6">8</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="c37eEtRLPjU">
+  <data key="d6">6</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="glVqpSLyrZc">
+  <data key="d6">10</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="RfzDHc5dF9Q">
+  <data key="d6">3</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="qHAXbR7SYP8">
+  <data key="d6">4</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="feffoaDAgO0">
+  <data key="d6">6</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="4IihsPhVd7c">
+  <data key="d6">12</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="vSfec19YOPg">
+  <data key="d6">6</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="PQn41fzVry0">
+  <data key="d6">18</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="kOJ8PoOTFhI">
+  <data key="d6">14</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="JqSbECqD7bc">
+  <data key="d6">38</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="vWlh41jJ2Ww">
+  <data key="d6">23</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="IqKIlLS7ln4">
+  <data key="d6">27</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="JMin2Czkx1M">
+  <data key="d6">7</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="a8iNcHeBUCU">
+  <data key="d6">4</data>
+</edge>
+<edge source="hk9CbqKEl-w" target="LuEaGNXlh1E">
+  <data key="d6">24</data>
+</edge>
+<edge source="g29yvU-6ep4" target="glVqpSLyrZc">
+  <data key="d6">20</data>
+</edge>
+<edge source="g29yvU-6ep4" target="RfzDHc5dF9Q">
+  <data key="d6">6</data>
+</edge>
+<edge source="g29yvU-6ep4" target="qHAXbR7SYP8">
+  <data key="d6">4</data>
+</edge>
+<edge source="g29yvU-6ep4" target="HRP1t-P0Ljw">
+  <data key="d6">4</data>
+</edge>
+<edge source="g29yvU-6ep4" target="feffoaDAgO0">
+  <data key="d6">21</data>
+</edge>
+<edge source="g29yvU-6ep4" target="4IihsPhVd7c">
+  <data key="d6">13</data>
+</edge>
+<edge source="g29yvU-6ep4" target="vSfec19YOPg">
+  <data key="d6">9</data>
+</edge>
+<edge source="g29yvU-6ep4" target="H-o_F6nKOro">
+  <data key="d6">12</data>
+</edge>
+<edge source="g29yvU-6ep4" target="PQn41fzVry0">
+  <data key="d6">5</data>
+</edge>
+<edge source="g29yvU-6ep4" target="JqSbECqD7bc">
+  <data key="d6">8</data>
+</edge>
+<edge source="g29yvU-6ep4" target="vWlh41jJ2Ww">
+  <data key="d6">3</data>
+</edge>
+<edge source="g29yvU-6ep4" target="IqKIlLS7ln4">
+  <data key="d6">3</data>
+</edge>
+<edge source="g29yvU-6ep4" target="a8iNcHeBUCU">
+  <data key="d6">21</data>
+</edge>
+<edge source="g29yvU-6ep4" target="LuEaGNXlh1E">
+  <data key="d6">5</data>
+</edge>
+<edge source="g29yvU-6ep4" target="yNH91o9hP8w">
+  <data key="d6">5</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="GAu1Y-5EPeM">
+  <data key="d6">3</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="jV6BprD7toY">
+  <data key="d6">3</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="glVqpSLyrZc">
+  <data key="d6">4</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="RfzDHc5dF9Q">
+  <data key="d6">4</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="qHAXbR7SYP8">
+  <data key="d6">8</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="feffoaDAgO0">
+  <data key="d6">6</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="4IihsPhVd7c">
+  <data key="d6">12</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="vSfec19YOPg">
+  <data key="d6">8</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="PQn41fzVry0">
+  <data key="d6">9</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="PNRl8TsMa9w">
+  <data key="d6">5</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="kOJ8PoOTFhI">
+  <data key="d6">18</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="JqSbECqD7bc">
+  <data key="d6">29</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="vWlh41jJ2Ww">
+  <data key="d6">18</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="IqKIlLS7ln4">
+  <data key="d6">22</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="a8iNcHeBUCU">
+  <data key="d6">7</data>
+</edge>
+<edge source="u71XD1Bt6Wo" target="LuEaGNXlh1E">
+  <data key="d6">11</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="jV6BprD7toY">
+  <data key="d6">15</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="c37eEtRLPjU">
+  <data key="d6">8</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="glVqpSLyrZc">
+  <data key="d6">4</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="qHAXbR7SYP8">
+  <data key="d6">5</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="HRP1t-P0Ljw">
+  <data key="d6">3</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="feffoaDAgO0">
+  <data key="d6">5</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="4IihsPhVd7c">
+  <data key="d6">8</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="vSfec19YOPg">
+  <data key="d6">5</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="PQn41fzVry0">
+  <data key="d6">12</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="PNRl8TsMa9w">
+  <data key="d6">5</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="kOJ8PoOTFhI">
+  <data key="d6">10</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="JqSbECqD7bc">
+  <data key="d6">9</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="vWlh41jJ2Ww">
+  <data key="d6">10</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="IqKIlLS7ln4">
+  <data key="d6">7</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="JMin2Czkx1M">
+  <data key="d6">8</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="a8iNcHeBUCU">
+  <data key="d6">3</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="LuEaGNXlh1E">
+  <data key="d6">21</data>
+</edge>
+<edge source="GAu1Y-5EPeM" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="jV6BprD7toY" target="c37eEtRLPjU">
+  <data key="d6">3</data>
+</edge>
+<edge source="jV6BprD7toY" target="4IihsPhVd7c">
+  <data key="d6">8</data>
+</edge>
+<edge source="jV6BprD7toY" target="PQn41fzVry0">
+  <data key="d6">4</data>
+</edge>
+<edge source="jV6BprD7toY" target="kOJ8PoOTFhI">
+  <data key="d6">5</data>
+</edge>
+<edge source="jV6BprD7toY" target="JqSbECqD7bc">
+  <data key="d6">8</data>
+</edge>
+<edge source="jV6BprD7toY" target="vWlh41jJ2Ww">
+  <data key="d6">5</data>
+</edge>
+<edge source="jV6BprD7toY" target="IqKIlLS7ln4">
+  <data key="d6">3</data>
+</edge>
+<edge source="jV6BprD7toY" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="jV6BprD7toY" target="LuEaGNXlh1E">
+  <data key="d6">9</data>
+</edge>
+<edge source="c37eEtRLPjU" target="qHAXbR7SYP8">
+  <data key="d6">4</data>
+</edge>
+<edge source="c37eEtRLPjU" target="HRP1t-P0Ljw">
+  <data key="d6">4</data>
+</edge>
+<edge source="c37eEtRLPjU" target="4IihsPhVd7c">
+  <data key="d6">5</data>
+</edge>
+<edge source="c37eEtRLPjU" target="vSfec19YOPg">
+  <data key="d6">6</data>
+</edge>
+<edge source="c37eEtRLPjU" target="PQn41fzVry0">
+  <data key="d6">5</data>
+</edge>
+<edge source="c37eEtRLPjU" target="PNRl8TsMa9w">
+  <data key="d6">6</data>
+</edge>
+<edge source="c37eEtRLPjU" target="kOJ8PoOTFhI">
+  <data key="d6">3</data>
+</edge>
+<edge source="c37eEtRLPjU" target="JqSbECqD7bc">
+  <data key="d6">8</data>
+</edge>
+<edge source="c37eEtRLPjU" target="vWlh41jJ2Ww">
+  <data key="d6">9</data>
+</edge>
+<edge source="c37eEtRLPjU" target="IqKIlLS7ln4">
+  <data key="d6">5</data>
+</edge>
+<edge source="c37eEtRLPjU" target="JMin2Czkx1M">
+  <data key="d6">5</data>
+</edge>
+<edge source="c37eEtRLPjU" target="LuEaGNXlh1E">
+  <data key="d6">12</data>
+</edge>
+<edge source="glVqpSLyrZc" target="RfzDHc5dF9Q">
+  <data key="d6">8</data>
+</edge>
+<edge source="glVqpSLyrZc" target="qHAXbR7SYP8">
+  <data key="d6">5</data>
+</edge>
+<edge source="glVqpSLyrZc" target="HRP1t-P0Ljw">
+  <data key="d6">5</data>
+</edge>
+<edge source="glVqpSLyrZc" target="feffoaDAgO0">
+  <data key="d6">22</data>
+</edge>
+<edge source="glVqpSLyrZc" target="4IihsPhVd7c">
+  <data key="d6">15</data>
+</edge>
+<edge source="glVqpSLyrZc" target="vSfec19YOPg">
+  <data key="d6">23</data>
+</edge>
+<edge source="glVqpSLyrZc" target="H-o_F6nKOro">
+  <data key="d6">13</data>
+</edge>
+<edge source="glVqpSLyrZc" target="PQn41fzVry0">
+  <data key="d6">9</data>
+</edge>
+<edge source="glVqpSLyrZc" target="PNRl8TsMa9w">
+  <data key="d6">3</data>
+</edge>
+<edge source="glVqpSLyrZc" target="kOJ8PoOTFhI">
+  <data key="d6">4</data>
+</edge>
+<edge source="glVqpSLyrZc" target="JqSbECqD7bc">
+  <data key="d6">9</data>
+</edge>
+<edge source="glVqpSLyrZc" target="vWlh41jJ2Ww">
+  <data key="d6">6</data>
+</edge>
+<edge source="glVqpSLyrZc" target="IqKIlLS7ln4">
+  <data key="d6">4</data>
+</edge>
+<edge source="glVqpSLyrZc" target="JMin2Czkx1M">
+  <data key="d6">4</data>
+</edge>
+<edge source="glVqpSLyrZc" target="a8iNcHeBUCU">
+  <data key="d6">53</data>
+</edge>
+<edge source="glVqpSLyrZc" target="LuEaGNXlh1E">
+  <data key="d6">14</data>
+</edge>
+<edge source="glVqpSLyrZc" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="qHAXbR7SYP8">
+  <data key="d6">4</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="HRP1t-P0Ljw">
+  <data key="d6">4</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="feffoaDAgO0">
+  <data key="d6">12</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="4IihsPhVd7c">
+  <data key="d6">16</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="vSfec19YOPg">
+  <data key="d6">6</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="H-o_F6nKOro">
+  <data key="d6">3</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="PQn41fzVry0">
+  <data key="d6">6</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="PNRl8TsMa9w">
+  <data key="d6">5</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="kOJ8PoOTFhI">
+  <data key="d6">3</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="JqSbECqD7bc">
+  <data key="d6">4</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="vWlh41jJ2Ww">
+  <data key="d6">5</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="JMin2Czkx1M">
+  <data key="d6">5</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="a8iNcHeBUCU">
+  <data key="d6">3</data>
+</edge>
+<edge source="RfzDHc5dF9Q" target="LuEaGNXlh1E">
+  <data key="d6">4</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="feffoaDAgO0">
+  <data key="d6">8</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="4IihsPhVd7c">
+  <data key="d6">3</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="vSfec19YOPg">
+  <data key="d6">6</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="H-o_F6nKOro">
+  <data key="d6">3</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="PQn41fzVry0">
+  <data key="d6">7</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="PNRl8TsMa9w">
+  <data key="d6">4</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="kOJ8PoOTFhI">
+  <data key="d6">4</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="vWlh41jJ2Ww">
+  <data key="d6">6</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="IqKIlLS7ln4">
+  <data key="d6">5</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="JMin2Czkx1M">
+  <data key="d6">5</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="a8iNcHeBUCU">
+  <data key="d6">5</data>
+</edge>
+<edge source="qHAXbR7SYP8" target="LuEaGNXlh1E">
+  <data key="d6">13</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="feffoaDAgO0">
+  <data key="d6">7</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="4IihsPhVd7c">
+  <data key="d6">6</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="vSfec19YOPg">
+  <data key="d6">3</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="H-o_F6nKOro">
+  <data key="d6">3</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="PQn41fzVry0">
+  <data key="d6">6</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="kOJ8PoOTFhI">
+  <data key="d6">5</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="JqSbECqD7bc">
+  <data key="d6">5</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="vWlh41jJ2Ww">
+  <data key="d6">8</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="HRP1t-P0Ljw" target="LuEaGNXlh1E">
+  <data key="d6">4</data>
+</edge>
+<edge source="feffoaDAgO0" target="4IihsPhVd7c">
+  <data key="d6">12</data>
+</edge>
+<edge source="feffoaDAgO0" target="vSfec19YOPg">
+  <data key="d6">12</data>
+</edge>
+<edge source="feffoaDAgO0" target="H-o_F6nKOro">
+  <data key="d6">11</data>
+</edge>
+<edge source="feffoaDAgO0" target="PQn41fzVry0">
+  <data key="d6">10</data>
+</edge>
+<edge source="feffoaDAgO0" target="PNRl8TsMa9w">
+  <data key="d6">4</data>
+</edge>
+<edge source="feffoaDAgO0" target="kOJ8PoOTFhI">
+  <data key="d6">3</data>
+</edge>
+<edge source="feffoaDAgO0" target="JqSbECqD7bc">
+  <data key="d6">7</data>
+</edge>
+<edge source="feffoaDAgO0" target="vWlh41jJ2Ww">
+  <data key="d6">11</data>
+</edge>
+<edge source="feffoaDAgO0" target="IqKIlLS7ln4">
+  <data key="d6">6</data>
+</edge>
+<edge source="feffoaDAgO0" target="JMin2Czkx1M">
+  <data key="d6">3</data>
+</edge>
+<edge source="feffoaDAgO0" target="a8iNcHeBUCU">
+  <data key="d6">20</data>
+</edge>
+<edge source="feffoaDAgO0" target="LuEaGNXlh1E">
+  <data key="d6">19</data>
+</edge>
+<edge source="feffoaDAgO0" target="yNH91o9hP8w">
+  <data key="d6">8</data>
+</edge>
+<edge source="4IihsPhVd7c" target="vSfec19YOPg">
+  <data key="d6">16</data>
+</edge>
+<edge source="4IihsPhVd7c" target="H-o_F6nKOro">
+  <data key="d6">5</data>
+</edge>
+<edge source="4IihsPhVd7c" target="PQn41fzVry0">
+  <data key="d6">25</data>
+</edge>
+<edge source="4IihsPhVd7c" target="PNRl8TsMa9w">
+  <data key="d6">5</data>
+</edge>
+<edge source="4IihsPhVd7c" target="kOJ8PoOTFhI">
+  <data key="d6">14</data>
+</edge>
+<edge source="4IihsPhVd7c" target="JqSbECqD7bc">
+  <data key="d6">21</data>
+</edge>
+<edge source="4IihsPhVd7c" target="vWlh41jJ2Ww">
+  <data key="d6">16</data>
+</edge>
+<edge source="4IihsPhVd7c" target="IqKIlLS7ln4">
+  <data key="d6">9</data>
+</edge>
+<edge source="4IihsPhVd7c" target="JMin2Czkx1M">
+  <data key="d6">12</data>
+</edge>
+<edge source="4IihsPhVd7c" target="a8iNcHeBUCU">
+  <data key="d6">12</data>
+</edge>
+<edge source="4IihsPhVd7c" target="LuEaGNXlh1E">
+  <data key="d6">23</data>
+</edge>
+<edge source="4IihsPhVd7c" target="yNH91o9hP8w">
+  <data key="d6">6</data>
+</edge>
+<edge source="vSfec19YOPg" target="H-o_F6nKOro">
+  <data key="d6">6</data>
+</edge>
+<edge source="vSfec19YOPg" target="PQn41fzVry0">
+  <data key="d6">13</data>
+</edge>
+<edge source="vSfec19YOPg" target="PNRl8TsMa9w">
+  <data key="d6">5</data>
+</edge>
+<edge source="vSfec19YOPg" target="kOJ8PoOTFhI">
+  <data key="d6">14</data>
+</edge>
+<edge source="vSfec19YOPg" target="JqSbECqD7bc">
+  <data key="d6">13</data>
+</edge>
+<edge source="vSfec19YOPg" target="vWlh41jJ2Ww">
+  <data key="d6">15</data>
+</edge>
+<edge source="vSfec19YOPg" target="IqKIlLS7ln4">
+  <data key="d6">12</data>
+</edge>
+<edge source="vSfec19YOPg" target="JMin2Czkx1M">
+  <data key="d6">10</data>
+</edge>
+<edge source="vSfec19YOPg" target="a8iNcHeBUCU">
+  <data key="d6">13</data>
+</edge>
+<edge source="vSfec19YOPg" target="LuEaGNXlh1E">
+  <data key="d6">21</data>
+</edge>
+<edge source="H-o_F6nKOro" target="PNRl8TsMa9w">
+  <data key="d6">4</data>
+</edge>
+<edge source="H-o_F6nKOro" target="JqSbECqD7bc">
+  <data key="d6">5</data>
+</edge>
+<edge source="H-o_F6nKOro" target="vWlh41jJ2Ww">
+  <data key="d6">6</data>
+</edge>
+<edge source="H-o_F6nKOro" target="IqKIlLS7ln4">
+  <data key="d6">4</data>
+</edge>
+<edge source="H-o_F6nKOro" target="a8iNcHeBUCU">
+  <data key="d6">10</data>
+</edge>
+<edge source="H-o_F6nKOro" target="LuEaGNXlh1E">
+  <data key="d6">7</data>
+</edge>
+<edge source="H-o_F6nKOro" target="yNH91o9hP8w">
+  <data key="d6">7</data>
+</edge>
+<edge source="PQn41fzVry0" target="PNRl8TsMa9w">
+  <data key="d6">4</data>
+</edge>
+<edge source="PQn41fzVry0" target="kOJ8PoOTFhI">
+  <data key="d6">14</data>
+</edge>
+<edge source="PQn41fzVry0" target="JqSbECqD7bc">
+  <data key="d6">18</data>
+</edge>
+<edge source="PQn41fzVry0" target="vWlh41jJ2Ww">
+  <data key="d6">25</data>
+</edge>
+<edge source="PQn41fzVry0" target="IqKIlLS7ln4">
+  <data key="d6">17</data>
+</edge>
+<edge source="PQn41fzVry0" target="JMin2Czkx1M">
+  <data key="d6">5</data>
+</edge>
+<edge source="PQn41fzVry0" target="a8iNcHeBUCU">
+  <data key="d6">7</data>
+</edge>
+<edge source="PQn41fzVry0" target="LuEaGNXlh1E">
+  <data key="d6">20</data>
+</edge>
+<edge source="PQn41fzVry0" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="JqSbECqD7bc">
+  <data key="d6">3</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="vWlh41jJ2Ww">
+  <data key="d6">9</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="IqKIlLS7ln4">
+  <data key="d6">5</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="JMin2Czkx1M">
+  <data key="d6">6</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="a8iNcHeBUCU">
+  <data key="d6">4</data>
+</edge>
+<edge source="PNRl8TsMa9w" target="LuEaGNXlh1E">
+  <data key="d6">8</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="JqSbECqD7bc">
+  <data key="d6">18</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="vWlh41jJ2Ww">
+  <data key="d6">17</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="IqKIlLS7ln4">
+  <data key="d6">9</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="JMin2Czkx1M">
+  <data key="d6">14</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="a8iNcHeBUCU">
+  <data key="d6">6</data>
+</edge>
+<edge source="kOJ8PoOTFhI" target="LuEaGNXlh1E">
+  <data key="d6">19</data>
+</edge>
+<edge source="JqSbECqD7bc" target="vWlh41jJ2Ww">
+  <data key="d6">51</data>
+</edge>
+<edge source="JqSbECqD7bc" target="IqKIlLS7ln4">
+  <data key="d6">42</data>
+</edge>
+<edge source="JqSbECqD7bc" target="JMin2Czkx1M">
+  <data key="d6">9</data>
+</edge>
+<edge source="JqSbECqD7bc" target="a8iNcHeBUCU">
+  <data key="d6">9</data>
+</edge>
+<edge source="JqSbECqD7bc" target="LuEaGNXlh1E">
+  <data key="d6">30</data>
+</edge>
+<edge source="JqSbECqD7bc" target="yNH91o9hP8w">
+  <data key="d6">5</data>
+</edge>
+<edge source="vWlh41jJ2Ww" target="IqKIlLS7ln4">
+  <data key="d6">31</data>
+</edge>
+<edge source="vWlh41jJ2Ww" target="JMin2Czkx1M">
+  <data key="d6">7</data>
+</edge>
+<edge source="vWlh41jJ2Ww" target="a8iNcHeBUCU">
+  <data key="d6">12</data>
+</edge>
+<edge source="vWlh41jJ2Ww" target="LuEaGNXlh1E">
+  <data key="d6">30</data>
+</edge>
+<edge source="vWlh41jJ2Ww" target="yNH91o9hP8w">
+  <data key="d6">6</data>
+</edge>
+<edge source="IqKIlLS7ln4" target="JMin2Czkx1M">
+  <data key="d6">7</data>
+</edge>
+<edge source="IqKIlLS7ln4" target="a8iNcHeBUCU">
+  <data key="d6">6</data>
+</edge>
+<edge source="IqKIlLS7ln4" target="LuEaGNXlh1E">
+  <data key="d6">21</data>
+</edge>
+<edge source="IqKIlLS7ln4" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="JMin2Czkx1M" target="a8iNcHeBUCU">
+  <data key="d6">6</data>
+</edge>
+<edge source="JMin2Czkx1M" target="LuEaGNXlh1E">
+  <data key="d6">37</data>
+</edge>
+<edge source="a8iNcHeBUCU" target="LuEaGNXlh1E">
+  <data key="d6">10</data>
+</edge>
+<edge source="a8iNcHeBUCU" target="yNH91o9hP8w">
+  <data key="d6">3</data>
+</edge>
+<edge source="LuEaGNXlh1E" target="yNH91o9hP8w">
+  <data key="d6">5</data>
+</edge>
+</graph></graphml>

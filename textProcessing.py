@@ -15,6 +15,9 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer, ENGLISH_STOP_WORDS
 from sklearn.decomposition import LatentDirichletAllocation
 
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+nltk.download('vader_lexicon')
+
 
 class textProcessing:
         def __init__(self, tokeniser, lStopwords):
@@ -165,4 +168,80 @@ class textProcessing:
             pyLDAvis.save_html(panel, 'ldaVis.html')
 
             self.displayWordcloud(ldaModel, tfFeatureNames)
-                
+            return ldaModel, tf
+
+
+class vaderAnalysis:
+    
+    def __init__(self, negativeVal = -1, positiveVal = 1):
+        self.m_sentAnalyser = SentimentIntensityAnalyzer()
+        self.m_negativeVal = negativeVal
+        self.m_positiveVal = positiveVal
+        
+    
+    def get_params(self, deep):
+        return {}
+    
+    
+    def fit(self, X, Y):
+        pass
+    
+    
+    def predict(self, X):       
+        return self.m_sentAnalyser.polarity_scores(X)['compound']
+    
+    def AvgSentiment(self, df, columnName):
+        sentiments = []
+        for _, x in df.iterrows():
+            sentiments.append(self.predict(x[columnName]))
+        return np.mean(sentiments)
+   
+    def graphSentimentDistribution(self, df, columnName):
+        sentiments = []
+        for _, x in df.iterrows():
+            sentiments.append(self.predict(x[columnName]))
+        
+        plt.figure(figsize=(10, 6))
+        plt.hist(sentiments, bins=20, edgecolor='black')
+        plt.title('Sentiment Distribution')
+        plt.xlabel('Compound Sentiment Score')
+        plt.ylabel('Frequency')
+        plt.grid(axis='y', alpha=0.75)
+        plt.show()
+        
+    def sentimentTimeSeries(self, df, columnName):
+        dateScores = {}
+        for _, x in df.iterrows():
+            date = datetime.strptime(x['Date'][:10], '%Y-%m-%d')
+            score = self.predict(x[columnName])
+            if date not in dateScores:
+                dateScores[date] = []
+            dateScores[date].append(score)
+
+        sortedDates = sorted(dateScores.keys())
+        avgScores = [sum(dateScores[d]) / len(dateScores[d]) for d in sortedDates]
+
+        plt.figure(figsize=(30, 10))
+        plt.plot(sortedDates, avgScores)
+        plt.title("Sentiment Time Series (Daily Average)")
+        plt.ylabel("Average Compound Sentiment Score")
+        plt.xlabel("Date")
+        plt.show()
+        
+    def topNegativeComments(self, df, columnName, topN):
+        commentScores = []
+        for _, x in df.iterrows():
+            score = self.predict(x[columnName])
+            commentScores.append((score, x[columnName]))
+
+        commentScores.sort(key=lambda x: x[0])
+        return commentScores[:topN]
+    
+    def topPositiveComments(self, df, columnName, topN):
+        commentScores = []
+        for _, x in df.iterrows():
+            score = self.predict(x[columnName])
+            commentScores.append((score, x[columnName]))
+
+        commentScores.sort(key=lambda x: x[0], reverse=True)
+        return commentScores[:topN]
