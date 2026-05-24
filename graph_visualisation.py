@@ -57,43 +57,80 @@ for comm_id, videos in communities.items():
 
 video_metrics['Community'] = video_metrics['Video_ID'].map(video_to_community)
 
-topic_names = {
+# Load BERT topic labels with meaningful names derived from example comments
+bert_topic_labels = {
     -1: 'Uncategorized',
-    0: 'Immigration & Demand',
-    1: 'Anti-Immigration',
-    2: 'Casual/Off-topic',
-    3: 'Real Estate Analysis',
-    4: 'Geographic Issues',
-    5: 'Government Policy',
-    6: 'Dismissive Tone',
-    7: 'Labor Blame',
-    8: 'Anti-Government',
-    9: 'Political Voting',
-    10: 'International Compare',
-    11: 'Rental Crisis',
-    12: 'Video-Specific',
-    13: 'Systemic Failure',
-    14: 'Ideology Debate',
-    15: 'Tax Criticism',
-    16: 'Supply/Demand Partisan',
-    17: 'Dismissive/Sarcastic',
-    18: 'Greens Support',
-    19: 'National Pessimism',
-    20: 'Wealth Inequality',
-    21: 'Party Attribution',
-    22: 'Conspiracy/NWO',
-    23: 'Monetary Policy',
-    24: 'Finance Coaching',
-    25: 'Video Quality',
-    26: 'Avocado Toast Joke',
-    27: 'Construction Regulation',
-    28: 'Immigration Policy',
-    29: 'Supply vs Demand',
-    30: 'Banking System Criticism',
-    31: 'Real Estate Agent Blame',
-    32: 'Land/Geography Arguments',
-    33: 'Miscellaneous',
-    34: 'Cross-country Chat'
+    0: 'Immigration & Labor',
+    1: 'Political Frustration',
+    2: 'Immigration Crisis',
+    3: 'Govt & Property Conflicts',
+    4: 'Direct Replies',
+    5: 'Govt Corruption',
+    6: 'Anti-Immigration',
+    7: 'Labor Party Criticism',
+    8: 'Sydney Housing',
+    9: 'International Comparisons',
+    10: 'Video Feedback',
+    11: 'Market Analysis',
+    12: 'Albanese Blame',
+    13: 'Taxation Issues',
+    14: 'Video Timestamps',
+    15: 'Socialism Debate',
+    16: 'Off-topic Chat',
+    17: 'Labor & Greens Blame',
+    18: 'Rental Crisis',
+    19: 'Video Commentary',
+    20: 'Greens Support',
+    21: 'Investment & Tax',
+    22: 'Monetary Policy',
+    23: 'Financial Coaching',
+    24: 'Conspiracy (NWO)',
+    25: 'Policy Solutions',
+    26: 'Wealth Inequality',
+    27: 'NZ References',
+    28: 'Housing Quality',
+    29: 'Emoji Reactions',
+    30: 'Real Estate Agents',
+    31: 'Video Analysis',
+    32: 'Housing Rights Debate',
+    33: 'Generational Divide',
+    34: 'Supply vs Demand',
+    35: 'Construction & Regulation',
+    36: 'Land Availability',
+    37: 'Chinese Investment',
+    38: 'Humor & Sarcasm',
+    39: 'Investment Strategy',
+    40: 'Tax Policy Discussion',
+    41: 'Market Price Movement',
+    42: 'Greed as Root Cause',
+    43: 'Singapore Model',
+    44: 'Indian/Asian Immigration',
+    45: 'International Living',
+    46: 'Local Area Discussion',
+    47: 'Wage & Income',
+    48: 'Strata & Apartments',
+    49: 'Negative Gearing',
+    50: 'Banking Criticism',
+    51: 'Homelessness',
+    52: 'Employment & Wages',
+    53: 'Albanese Immigration',
+    54: 'Tenant Rights',
+    55: 'Foreign Ownership',
+    56: 'Politician Accountability',
+    57: 'Homelessness Reality',
+    58: 'Urban Living Costs',
+    59: 'Market Crash Speculation',
+    60: 'Interest Rates',
+    61: 'Australian Dream',
+    62: 'Supply Solutions',
+    63: 'Sydney vs Other Cities',
+    64: 'Bank Blame',
+    65: 'Debt & Government',
+    66: 'Call to Action',
+    67: 'Media Criticism',
+    68: 'Content Creator Praise',
+    69: 'RBA Criticism',
+    70: 'Solutions Discussion'
 }
 
 # Vid network graph
@@ -191,7 +228,7 @@ plt.savefig('vis_3_emotion_heatmap.png', dpi=300, bbox_inches='tight')
 print("Saved to: vis_3_emotion_heatmap.png")
 plt.close()
 
-# Topic distribution by community
+# Topic distribution by community (using BERT-identified topics)
 fig, axes = plt.subplots(1, 3, figsize=(16, 5))
 
 for idx, comm_id in enumerate([0, 1, 2]):
@@ -200,8 +237,8 @@ for idx, comm_id in enumerate([0, 1, 2]):
     
     axes[idx].bar(range(len(topic_data)), topic_data.values, color=colors_grad, edgecolor='black', linewidth=1.2)
     axes[idx].set_xticks(range(len(topic_data)))
-    # Use actual topic names instead of T1, T2, etc.
-    topic_labels = [f'{topic_names.get(int(t), f"T{int(t)}")}' for t in topic_data.index]
+    # Use BERT-identified topics
+    topic_labels = [f'{bert_topic_labels.get(int(t), f"Topic {int(t)}")}' for t in topic_data.index]
     axes[idx].set_xticklabels(topic_labels, fontsize=9, rotation=45, ha='right')
     axes[idx].set_ylabel('Percentage (%)', fontsize=11)
     axes[idx].set_title(f'Community {comm_id}\n({len(communities[comm_id])} videos)', fontsize=12, fontweight='bold')
@@ -209,7 +246,7 @@ for idx, comm_id in enumerate([0, 1, 2]):
     for i, v in enumerate(topic_data.values):
         axes[idx].text(i, v + 0.3, f'{v:.1f}%', ha='center', fontsize=8)
 
-plt.suptitle('Topic Distribution by Community (Top 10)', 
+plt.suptitle('Topic Distribution by Community (Top 10) - BERT Topics', 
              fontsize=14, fontweight='bold', y=1.02)
 plt.tight_layout()
 plt.savefig('vis_4_topic_distri.png', dpi=300, bbox_inches='tight')
