@@ -5,6 +5,9 @@ import seaborn as sns
 import numpy as np
 from matplotlib.patches import Patch
 import warnings
+import os
+from googleapiclient.discovery import build
+from dotenv import load_dotenv
 warnings.filterwarnings('ignore')
 
 # Styling
@@ -18,6 +21,28 @@ emotion_matrix = pd.read_csv('community_emotion_matrix.csv', index_col=0)
 topic_matrix = pd.read_csv('community_topic_matrix.csv', index_col=0)
 coupling_df = pd.read_csv('community_topic_emotion_coupling.csv')
 sentiment_summary = pd.read_csv('community_sentiment_integration_summary.csv')
+
+# Function to fetch video metadata from YouTube API
+def get_video_metadata(youtube, video_ids):
+    """Fetches title and channel for a list of video IDs."""
+    metadata = {}
+    for i in range(0, len(video_ids), 50):
+        batch = video_ids[i:i+50]
+        try:
+            response = youtube.videos().list(part="snippet", id=",".join(batch)).execute()
+            for item in response.get("items", []):
+                metadata[item["id"]] = {
+                    "title": item["snippet"]["title"],
+                    "channel": item["snippet"]["channelTitle"]
+                }
+        except Exception as e:
+            print(f"Error fetching metadata: {e}")
+    return metadata
+
+# Initialize YouTube API
+load_dotenv()
+API_KEY = os.getenv("YOUTUBE_API_KEY")
+youtube = build('youtube', 'v3', developerKey=API_KEY)
 
 communities = {
     0: ['JMin2Czkx1M', 'uUSLmYPHkCc', 'jV6BprD7toY', 'c37eEtRLPjU', 'qHAXbR7SYP8', 'GAu1Y-5EPeM', 'PNRl8TsMa9w', 'LuEaGNXlh1E'],
@@ -99,7 +124,19 @@ node_sizes = [500 + 2000 * G_video.nodes[node]['betweenness'] for node in G_vide
 
 nx.draw_networkx_edges(G_video, pos, alpha=0.2, ax=ax)
 nx.draw_networkx_nodes(G_video, pos, node_color=node_colors, node_size=node_sizes, alpha=0.8, ax=ax)
-nx.draw_networkx_labels(G_video, pos, font_size=8, ax=ax)
+
+# Fetch video metadata and create labels using CHANNEL NAMES
+metadata = get_video_metadata(youtube, list(G_video.nodes()))
+
+# Create labels using channel names (shorter, more meaningful for network analysis)
+labels = {}
+for video_id in G_video.nodes():
+    if video_id in metadata:
+        labels[video_id] = metadata[video_id]['channel']
+    else:
+        labels[video_id] = video_id[:8]  # Fallback to first 8 chars of ID
+
+nx.draw_networkx_labels(G_video, pos, labels, font_size=7, ax=ax)
 
 # Generate legend labels dynamically from community_analysis
 legend_elements = []
