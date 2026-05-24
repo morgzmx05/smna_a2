@@ -371,10 +371,22 @@ top_videos = video_metrics.nlargest(10, 'Betweenness_Centrality')
 colors_by_community = ['salmon' if int(c) == 0 else 'lightskyblue' if int(c) == 1 else 'turquoise' 
                        for c in top_videos['Community']]
 
+# Fetch video metadata and create labels using CHANNEL NAMES
+metadata = get_video_metadata(youtube, top_videos['Video_ID'].tolist())
+
 bars = ax.barh(range(len(top_videos)), top_videos['Betweenness_Centrality'].values, color=colors_by_community, 
                edgecolor='black', linewidth=1.2)
 ax.set_yticks(range(len(top_videos)))
-ax.set_yticklabels(top_videos['Video_ID'].values)
+
+# Create labels using channel names
+channel_labels = []
+for video_id in top_videos['Video_ID'].values:
+    if video_id in metadata:
+        channel_labels.append(metadata[video_id]['channel'])
+    else:
+        channel_labels.append(video_id[:8])  # Fallback to first 8 chars of ID
+
+ax.set_yticklabels(channel_labels)
 ax.set_xlabel('Betweenness Centrality (Bridge Strength)', fontsize=12, fontweight='bold')
 ax.set_title('Top 10 Bridge Videos (Cross-Community Connectors)\n(Higher centrality = connects more communities)', 
              fontsize=13, fontweight='bold')
