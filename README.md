@@ -36,6 +36,9 @@ Data was collected using a custom Python script interfacing with the **YouTube D
 * `network_analysis.py`: Video network analysis (bipartite projection).
 * `requirements.txt`: Python package dependencies.
 * `.gitignore`: Prevents heavy and sensitive files from being committed.
+* `TextAnalysisGraphs.ipynb`: Text analysis and other various graphs for LDA and Emotions
+* `textProccessing.py`: Contains all functions used to produce graphs in TextAnalysisGraphs NB
+* `userTouser.py`: All the code producing the user-to-user network from network data
 
 ## Setup & Installation
 This project requires Python 3.x. 
